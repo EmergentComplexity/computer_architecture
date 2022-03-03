@@ -60,8 +60,8 @@ module Computer;
       #50
       $display ("value is %d", Output);  // initial value
       #300
-     
-	
+     Input = 4'b0010;
+	#200
 	
       $finish;
 	end
