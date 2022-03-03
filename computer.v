@@ -82,250 +82,265 @@ endmodule
 module InstructionDecoder(DataIn, HLT, ADD, SUB, STO, LD, B, BZ, LDV, INP, OUT, AND, OR, NOT);
   input [0:3] DataIn;
   output reg HLT, ADD,SUB, STO, LD, B, BZ, LDV, INP, OUT, AND, OR, NOT;
+  initial begin
+        HLT <= 0;
+        ADD <= 0;
+        SUB <= 0;
+        STO <= 0;
+        LD  <= 0;
+        B   <= 0;
+        BZ  <= 0;
+        LDV <= 0;
+        INP <= 0;
+        OUT <= 0;
+        AND <= 0;
+        OR  <= 0;
+        NOT <= 0;
+  end
   
   always @(DataIn) begin
     case (DataIn) 
       4'b0000: begin // HLT
-        HLT = 1;
-        ADD = 0;
-        SUB = 0;
-        STO = 0;
-        LD = 0;
-        B = 0;
-        BZ = 0;
-        LDV = 0;
-        INP = 0;
-        OUT = 0;
-        AND = 0;
-        OR = 0;
-        NOT = 0;
+        HLT <= 1;
+        ADD <= 0;
+        SUB <= 0;
+        STO <= 0;
+        LD  <= 0;
+        B   <= 0;
+        BZ  <= 0;
+        LDV <= 0;
+        INP <= 0;
+        OUT <= 0;
+        AND <= 0;
+        OR  <= 0;
+        NOT <= 0;
       end
       4'b0001: begin // ADD
-        HLT = 0;
-        ADD = 1;
-        SUB = 0;
-        STO = 0;
-        LD = 0;
-        B = 0;
-        BZ = 0;
-        LDV = 0;
-        INP = 0;
-        OUT = 0;
-        AND = 0;
-        OR = 0;
-        NOT = 0;
+        HLT <= 0;
+        ADD <= 1;
+        SUB <= 0;
+        STO <= 0;
+        LD  <= 0;
+        B   <= 0;
+        BZ  <= 0;
+        LDV <= 0;
+        INP <= 0;
+        OUT <= 0;
+        AND <= 0;
+        OR  <= 0;
+        NOT <= 0;
       end
       4'b0010: begin // SUB
-        HLT = 0;
-        ADD = 0;
-        SUB = 1;
-        STO = 0;
-        LD = 0;
-        B = 0;
-        BZ = 0;
-        LDV = 0;
-        INP = 0;
-        OUT = 0;
-        AND = 0;
-        OR = 0;
-        NOT = 0;
+        HLT <= 0;
+        ADD <= 0;
+        SUB <= 1;
+        STO <= 0;
+        LD  <= 0;
+        B   <= 0;
+        BZ  <= 0;
+        LDV <= 0;
+        INP <= 0;
+        OUT <= 0;
+        AND <= 0;
+        OR  <= 0;
+        NOT <= 0;
       end
       4'b0011: begin // STO
-        HLT = 0;
-        ADD = 0;
-        SUB = 0;
-        STO = 1;
-        LD = 0;
-        B = 0;
-        BZ = 0;
-        LDV = 0;
-        INP = 0;
-        OUT = 0;
-        AND = 0;
-        OR = 0;
-        NOT = 0;
+        HLT <= 0;
+        ADD <= 0;
+        SUB <= 0;
+        STO <= 1;
+        LD  <= 0;
+        B   <= 0;
+        BZ  <= 0;
+        LDV <= 0;
+        INP <= 0;
+        OUT <= 0;
+        AND <= 0;
+        OR  <= 0;
+        NOT <= 0;
       end
       4'b0100: begin // LD
-        HLT = 0;
-        ADD = 0;
-        SUB = 0;
-        STO = 0;
-        LD = 1;
-        B = 0;
-        BZ = 0;
-        LDV = 0;
-        INP = 0;
-        OUT = 0;
-        AND = 0;
-        OR = 0;
-        NOT = 0;
+        HLT <= 0;
+        ADD <= 0;
+        SUB <= 0;
+        STO <= 0;
+        LD  <= 1;
+        B   <= 0;
+        BZ  <= 0;
+        LDV <= 0;
+        INP <= 0;
+        OUT <= 0;
+        AND <= 0;
+        OR  <= 0;
+        NOT <= 0;
       end
       4'b0101: begin // B
-        HLT = 0;
-        ADD = 0;
-        SUB = 0;
-        STO = 0;
-        LD = 0;
-        B = 1;
-        BZ = 0;
-        LDV = 0;
-        INP = 0;
-        OUT = 0;
-        AND = 0;
-        OR = 0;
-        NOT = 0;
+        HLT <= 0;
+        ADD <= 0;
+        SUB <= 0;
+        STO <= 0;
+        LD  <= 0;
+        B   <= 1;
+        BZ  <= 0;
+        LDV <= 0;
+        INP <= 0;
+        OUT <= 0;
+        AND <= 0;
+        OR  <= 0;
+        NOT <= 0;
       end
       4'b0110: begin // BZ
-        HLT = 0;
-        ADD = 0;
-        SUB = 0;
-        STO = 0;
-        LD = 0;
-        B = 0;
-        BZ = 1;
-        LDV = 0;
-        INP = 0;
-        OUT = 0;
-        AND = 0;
-        OR = 0;
-        NOT = 0;
+        HLT <= 0;
+        ADD <= 0;
+        SUB <= 0;
+        STO <= 0;
+        LD  <= 0;
+        B   <= 0;
+        BZ  <= 1;
+        LDV <= 0;
+        INP <= 0;
+        OUT <= 0;
+        AND <= 0;
+        OR  <= 0;
+        NOT <= 0;
       end
       4'b0111: begin // LDV
-        HLT = 0;
-        ADD = 0;
-        SUB = 0;
-        STO = 0;
-        LD = 0;
-        B = 0;
-        BZ = 0;
-        LDV = 1;  
-        INP = 0;
-        OUT = 0;
-        AND = 0;
-        OR = 0;
-        NOT = 0;
+        HLT <= 0;
+        ADD <= 0;
+        SUB <= 0;
+        STO <= 0;
+        LD  <= 0;
+        B   <= 0;
+        BZ  <= 0;
+        LDV <= 1;  
+        INP <= 0;
+        OUT <= 0;
+        AND <= 0;
+        OR  <= 0;
+        NOT <= 0;
       end
       4'b1000: begin // INP
-        HLT = 0;
-        ADD = 0;
-        SUB = 0;
-        STO = 0;
-        LD = 0;
-        B = 0;
-        BZ = 0;
-        LDV = 0; 
-        INP = 1;
-        OUT = 0;
-        AND = 0;
-        OR = 0;
-        NOT = 0;
+        HLT <= 0;
+        ADD <= 0;
+        SUB <= 0;
+        STO <= 0;
+        LD  <= 0;
+        B   <= 0;
+        BZ  <= 0;
+        LDV <= 0; 
+        INP <= 1;
+        OUT <= 0;
+        AND <= 0;
+        OR  <= 0;
+        NOT <= 0;
       end
       4'b1001: begin // OUT
-        HLT = 0;
-        ADD = 0;
-        SUB = 0;
-        STO = 0;
-        LD = 0;
-        B = 0;
-        BZ = 0;
-        LDV = 0; 
-        INP = 0;
-        OUT = 1;
-        AND = 0;
-        OR = 0;
-        NOT = 0;
+        HLT <= 0;
+        ADD <= 0;
+        SUB <= 0;
+        STO <= 0;
+        LD  <= 0;
+        B   <= 0;
+        BZ  <= 0;
+        LDV <= 0; 
+        INP <= 0;
+        OUT <= 1;
+        AND <= 0;
+        OR  <= 0;
+        NOT <= 0;
       end
       4'b1010: begin // AND
-        HLT = 0;
-        ADD = 0;
-        SUB = 0;
-        STO = 0;
-        LD = 0;
-        B = 0;
-        BZ = 0;
-        LDV = 0; 
-        INP = 0;
-        OUT = 0;
-        AND = 1;
-        OR = 0;
-        NOT = 0;
+        HLT <= 0;
+        ADD <= 0;
+        SUB <= 0;
+        STO <= 0;
+        LD  <= 0;
+        B   <= 0;
+        BZ  <= 0;
+        LDV <= 0; 
+        INP <= 0;
+        OUT <= 0;
+        AND <= 1;
+        OR  <= 0;
+        NOT <= 0;
       end
       4'b1011: begin // OR
-        HLT = 0;
-        ADD = 0;
-        SUB = 0;
-        STO = 0;
-        LD = 0;
-        B = 0;
-        BZ = 0;
-        LDV = 0; 
-        INP = 0;
-        OUT = 0;
-        AND = 0;
-        OR = 1;
-        NOT = 0;
+        HLT <= 0;
+        ADD <= 0;
+        SUB <= 0;
+        STO <= 0;
+        LD  <= 0;
+        B   <= 0;
+        BZ  <= 0;
+        LDV <= 0; 
+        INP <= 0;
+        OUT <= 0;
+        AND <= 0;
+        OR  <= 1;
+        NOT <= 0;
       end
       4'b1100: begin // NOT
-        HLT = 0;
-        ADD = 0;
-        SUB = 0;
-        STO = 0;
-        LD = 0;
-        B = 0;
-        BZ = 0;
-        LDV = 0; 
-        INP = 0;
-        OUT = 0;
-        AND = 0;
-        OR = 0;
-        NOT = 1;
+        HLT <= 0;
+        ADD <= 0;
+        SUB <= 0;
+        STO <= 0;
+        LD  <= 0;
+        B   <= 0;
+        BZ  <= 0;
+        LDV <= 0; 
+        INP <= 0;
+        OUT <= 0;
+        AND <= 0;
+        OR  <= 0;
+        NOT <= 1;
       end
       4'b1101: begin
-        HLT = 0;
-        ADD = 0;
-        SUB = 0;
-        STO = 0;
-        LD = 0;
-        B = 0;
-        BZ = 0;
-        LDV = 0; 
-        INP = 0;
-        OUT = 0;
-        AND = 0;
-        OR = 0;
-        NOT = 0;
+        HLT <= 0;
+        ADD <= 0;
+        SUB <= 0;
+        STO <= 0;
+        LD  <= 0;
+        B   <= 0;
+        BZ  <= 0;
+        LDV <= 0; 
+        INP <= 0;
+        OUT <= 0;
+        AND <= 0;
+        OR  <= 0;
+        NOT <= 0;
         // free
       end
       4'b1110: begin
-        HLT = 0;
-        ADD = 0;
-        SUB = 0;
-        STO = 0;
-        LD = 0;
-        B = 0;
-        BZ = 0;
-        LDV = 0; 
-        INP = 0;
-        OUT = 0;
-        AND = 0;
-        OR = 0;
-        NOT = 0;
+        HLT <= 0;
+        ADD <= 0;
+        SUB <= 0;
+        STO <= 0;
+        LD  <= 0;
+        B   <= 0;
+        BZ  <= 0;
+        LDV <= 0; 
+        INP <= 0;
+        OUT <= 0;
+        AND <= 0;
+        OR  <= 0;
+        NOT <= 0;
         // free
       end
       4'b1111: begin
-        HLT = 0;
-        ADD = 0;
-        SUB = 0;
-        STO = 0;
-        LD = 0;
-        B = 0;
-        BZ = 0;
-        LDV = 0; 
-        INP = 0;
-        OUT = 0;
-        AND = 0;
-        OR = 0;
-        NOT = 0;
+        HLT <= 0;
+        ADD <= 0;
+        SUB <= 0;
+        STO <= 0;
+        LD  <= 0;
+        B   <= 0;
+        BZ  <= 0;
+        LDV <= 0; 
+        INP <= 0;
+        OUT <= 0;
+        AND <= 0;
+        OR  <= 0;
+        NOT <= 0;
         // free
       end
     endcase
@@ -338,149 +353,150 @@ module ALU(A, B, S, F, M, Cn);
   input M,Cn;
   input[0:3] A, B, S;
   output reg[0:3] F;
-  always @(S) begin
+  initial F <=4'b0000;
+  always @(S or M or Cn) begin
       case (S) 
         4'b0000: begin
           if (M == 1) 
-            F = ~A;  // ~ is bitwise,
+            F <= ~A;  // ~ is bitwise,
           else if (Cn == 0) 
-            F = A - 1;     
+            F <= A - 1;     
           else if (Cn == 1) 
-            F = A;
+            F <= A;
         end
 
         4'b0001: begin
           if (M == 1) 
-            F = ~(A & B);
+            F <= ~(A & B);
           else if (Cn == 0) 
-            F = ((A & B) - 1);
+            F <= ((A & B) - 1);
           else if (Cn == 1) 
-            F = (A & B);
+            F <= (A & B);
         end
 
         4'b0010: begin
           if (M == 1)
-            F = ((~A) | B);
+            F <= ((~A) | B);
           else if (Cn == 0) 
-            F = ((A & (~B)) - 1);
+            F <= ((A & (~B)) - 1);
           else if (Cn == 1) 
-            F = (A & (~B));
+            F <= (A & (~B));
         end
 
         4'b0011: begin
           if (M == 1) 
-            F = 1;
+            F <= 1;
           else if (Cn == 0) 
-            F = -1; // 2s comp
+            F <= -1; // 2s comp
           else if (Cn == 1) 
-            F = 0;
+            F <= 0;
         end
 
         4'b0100: begin
           if (M == 1) 
-            F = ~(A | B);
+            F <= ~(A | B);
           else if (Cn == 0) 
-            F = (A + (A | (~B)));
+            F <= (A + (A | (~B)));
           else if (Cn == 1) 
-            F = (A + (A | (~B)) + 1);
+            F <= (A + (A | (~B)) + 1);
         end
 
         4'b0101: begin
           if (M == 1) 
-            F = ~B;
+            F <= ~B;
           else if (Cn == 0) 
-            F = ((A & B) + (A | (~B)));
+            F <= ((A & B) + (A | (~B)));
           else if (Cn == 1) 
-            F = ((A & B) + (A | (~B)) +1);
+            F <= ((A & B) + (A | (~B)) +1);
         end
 
         4'b0110: begin
           if (M == 1) 
-            F = ~(A ^ B);
+            F <= ~(A ^ B);
           else if (Cn == 0) 
-            F = (A - B - 1);
+            F <= (A - B - 1);
           else if (Cn == 1) 
-            F = (A - B);
+            F <= (A - B);
         end
           
         4'b0111: begin
           if (M == 1) 
-            F = (A | (~B));
+            F <= (A | (~B));
           else if (Cn == 0) 
-            F = (A | (~B));
+            F <= (A | (~B));
           else if (Cn == 1) 
-            F = ((A | (~B)) + 1);
+            F <= ((A | (~B)) + 1);
         end
 
         4'b1000: begin
           if (M == 1) 
-            F = ((~A) & B);
+            F <= ((~A) & B);
           else if (Cn == 0) 
-            F = (A + (A | B));
+            F <= (A + (A | B));
           else if (Cn == 1) 
-            F = (A + (A | B) + 1);
+            F <= (A + (A | B) + 1);
         end
 
         4'b1001: begin
           if (M == 1) 
-            F = A ^ B;
+            F <= A ^ B;
           else if (Cn == 0) 
-            F = (A + B);
+            F <= (A + B);
           else if (Cn == 1) 
-            F = (A + B + 1);
+            F <= (A + B + 1);
         end
 
         4'b1010: begin
           if (M == 1) 
-            F = B;
+            F <= B;
           else if (Cn == 0) 
-            F = ((A & ~(B)) + (A | B));
+            F <= ((A & ~(B)) + (A | B));
           else if (Cn == 1) 
-            F = ((A & ~(B)) + (A | B) + 1);
+            F <= ((A & ~(B)) + (A | B) + 1);
         end
 
         4'b1011: begin
           if (M == 1) 
-            F = (A | B);
+            F <= (A | B);
           else if (Cn == 0) 
-            F = (A | B);
+            F <= (A | B);
           else if (Cn == 1) 
-            F = ((A | B) + 1);
+            F <= ((A | B) + 1);
         end
 
         4'b1100: begin
           if (M == 1)
-            F = 0;
+            F <= 0;
           else if (Cn == 0) 
-            F = (A + (A << 1));
+            F <= (A + (A << 1));
           else if (Cn == 1) 
-            F = (A + A + 1);
+            F <= (A + A + 1);
         end
 
         4'b1101: begin
           if (M == 1) 
-            F = (A & ~B);
+            F <= (A & ~B);
           else if (Cn == 0) 
-            F = ((A & B) + A);
+            F <= ((A & B) + A);
           else if (Cn == 1) 
-            F = ((A & B) + A + 1);
+            F <= ((A & B) + A + 1);
         end
 
         4'b1110: begin
           if (M == 1) 
-            F = (A & B);
+            F <= (A & B);
           else if (Cn == 0) 
-            F = ((A & B) + A);
+            F <= ((A & B) + A);
           else if (Cn == 1) 
-            F = ((A & B) + A + 1);
+            F <= ((A & B) + A + 1);
         end
         4'b1111: begin
           if (M == 1) 
-            F = A;
+            F <= A;
           else if (Cn == 0) 
-            F = A;
+            F <= A;
           else if (Cn == 1) 
-            F = A + 1;
+            F <= A + 1;
         end
     endcase
   end
@@ -490,27 +506,28 @@ endmodule
 module ALUEncoder(ADD, SUB, STO, LD, LDV, INP, OUT, AND, OR, NOT, ALUOut);
   input ADD, SUB, STO, LD, LDV, INP, OUT, AND, OR, NOT;
   output reg [0:5] ALUOut;
+  initial ALUOut <= 5'b00000;
   always @(ADD or SUB or STO or LD or LDV or INP or OUT or AND or OR or NOT) begin
     if(ADD) 
-      ALUOut = 6'b100100;
+      ALUOut <= 6'b100100;
    
     else if (SUB) 
-      ALUOut = 6'b011001;
+      ALUOut <= 6'b011001;
     
     else if (STO || OUT ) 
-      ALUOut = 6'b000001;
+      ALUOut <= 6'b000001;
   
     else if (LD || LDV || INP) 
-      ALUOut = 6'b101010;
+      ALUOut <= 6'b101010;
   
     else if (AND) 
-      ALUOut = 6'b111010;
+      ALUOut <= 6'b111010;
   
     else if (OR) 
-      ALUOut = 6'b101110;
+      ALUOut <= 6'b101110;
   
     else if (NOT) 
-      ALUOut = 6'b000010;
+      ALUOut <= 6'b000010;
   end
 endmodule
 
@@ -544,7 +561,7 @@ module FourBitComputer(CLK, StopPC, ResetPC, PRAMAddress, PRAMData, PRAMWrite, I
   
   assign subCRST = ((SubCountOut & 4'b0100) >> 2);
   wire[0:3] PCAddress;
-  Pcounter PC(Qprime, ResetPC, RamOut, StopPC, Branch, PCAddress);
+  Pcounter PC(Qprime, ResetPC, Data, StopPC, Branch, PCAddress);
   SRLatch latch(CLK,subCRST , Q, Qprime);
   
   reg QQ;
@@ -563,14 +580,14 @@ module FourBitComputer(CLK, StopPC, ResetPC, PRAMAddress, PRAMData, PRAMWrite, I
   
   
    wire [0:3] SubCountOut;
-  counter SubCounter(CLK, Qprime | ResetPC, 4'b0000, StopPC, Branch, SubCountOut);
+  counter SubCounter(CLK, Qprime | ResetPC, 4'b0000, StopPC, 1'b0, SubCountOut);
     
   wire [0:3] Instruction;
   wire [0:3] Data;
   wire [0:3] PInstruction;
   wire [0:3] Pdata;
-  assign PInstruction = PRAMData & 8'b00001111;
-  assign Pdata = (PRAMData & 8'b11110000) >> 4;
+  assign PInstruction = (PRAMData & 8'b11110000) >> 4;
+  assign Pdata = PRAMData & 8'b00001111;
     RAM InstructionRAM(PRAMWrite, PRAMAddress | PCAddress,PInstruction , Instruction);
   RAM DataRAM(PRAMWrite, PRAMAddress | PCAddress, Pdata , Data);
     
@@ -580,22 +597,34 @@ module FourBitComputer(CLK, StopPC, ResetPC, PRAMAddress, PRAMData, PRAMWrite, I
 
 
   reg [0:3] ALUB;
+  initial ALUB <= 4'b0000;
   always @ (ADD or SUB or LD or AND or OR or LDV or INP) begin
     if(ADD || SUB || LD || AND || OR) 
-      ALUB = RamOut;
+      ALUB <= RamOut;
     else if(LDV) 
-      ALUB = Data;
+      ALUB <= Data;
     else if(INP) 
-      ALUB = Input;
+      ALUB <= Input;
+    else
+      ALUB <= 4'b0000;
   end 
      
      
  
-   reg EncoderVal;
-  //ALUEncoder(ADD, SUB, STO, LD, LDV, INP, OUT, AND, OR, NOT, EncoderVal);
+  wire [0:5] EncoderVal;
+  
+  
+   ALUEncoder Enc1(ADD, SUB, STO, LD, LDV, INP, OUT, AND, OR, NOT, EncoderVal);
   //ALU alu1(A, B, S, F, M, Cn);
   wire [0:3] ALUOut;
-  ALU alu1(Accumulator, ALUB, ((EncoderVal & 6'b111100) >> 2),ALUOut,((EncoderVal & 6'b000010) >> 1), (EncoderVal & 6'b000001));
+  wire [0:3] S;
+  wire M;
+  wire Cn;
+  assign S = ((EncoderVal & 6'b111100) >> 2);
+  assign M = ((EncoderVal & 6'b000010) >> 1);
+  assign Cn= (EncoderVal & 6'b000001);
+  
+  ALU alu1(Accumulator, ALUB, S,ALUOut, M, Cn);
    //
 
 
@@ -605,18 +634,20 @@ module FourBitComputer(CLK, StopPC, ResetPC, PRAMAddress, PRAMData, PRAMWrite, I
   assign writeAccum = ((SubCountOut == 3) && writeAccumALUreg);
 
   reg [0:3] Accumulator; 
-  always @ (posedge CLK) begin
+  initial Accumulator = 4'b0000;
+  always @ (posedge writeAccum) begin
     if(writeAccum)
-      Accumulator = ALU_Register;
+      Accumulator <= ALU_Register;
   end
   
   
   wire writeALUreg;
   assign writeALUreg = ((SubCountOut) && writeAccumALUreg);
   reg [0:3] ALU_Register;
-  always @ (posedge CLK) begin
+  initial ALU_Register = 4'b0000;
+  always @ (posedge writeALUreg) begin
     if(writeALUreg)
-      ALU_Register = ALUOut;
+      ALU_Register <= ALUOut;
   end
   
   
@@ -634,5 +665,5 @@ module FourBitComputer(CLK, StopPC, ResetPC, PRAMAddress, PRAMData, PRAMWrite, I
   wire writeRam;
   assign writeRam = ((SubCountOut) && STO);
   wire [0:3] RamOut;
-  RAM SystemRam(!(CLK && writeRam), Data, ALUOut, RamOut);
+  RAM SystemRam((CLK && writeRam), Data, ALUOut, RamOut);
 endmodule
